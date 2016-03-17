@@ -1,0 +1,301 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name=Title content=" ">
+<meta name=Keywords content="">
+<meta http-equiv=Content-Type content="text/html; charset=macintosh">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="bpg_files/filelist.xml">
+<link rel=Edit-Time-Data href="bpg_files/editdata.mso">
+<title>Clips Basic Programming Guide part 1</title>
+</head>
+
+<body bgcolor="white" lang="EN-US" link="blue" vlink="purple" style="tab-interval:.5in">
+<div class="Section1">
+<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:24.0pt"><b>Basic Programming Guide (Clips)</b></span><span style="font-size:36.0pt"><b><o:p></o:p></b></span></p>
+
+</div>
+
+<div class="Section3">
+
+<div style="border:solid windowtext 1.5pt;padding:0in 0in 0in 0in;mso-border-shadow:
+yes">
+
+<h1 style="mso-border-between:.75pt solid windowtext;mso-padding-between:0in"><a name="_Toc11859598">License Information</a></h1>
+
+</div>
+
+<p class="MsoNormal"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic">Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation files (the
+“Software”), to deal in the Software without restriction, including without
+limitation the rights to use, copy, modify, merge, publish, distribute, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so. </p>
+
+<p class="basic"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic"><span style="font-size:10.0pt">THE SOFTWARE IS PROVIDED “AS IS”,
+WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL THE AUTHORS BE LIABLE
+FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
+WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. <o:p></o:p></span></p>
+
+<p class="basic"><span style="font-size:10.0pt"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></span></p>
+
+<p class="basic">CLIPS is released as public domain software and as such you are
+under no obligation to pay for its use. However, if you derive commercial or
+monetary benefit from use of the software or just want to show support, please
+consider making a voluntary payment based on the worth of the software to you
+as compensation for the time and effort required to develop and maintain CLIPS.
+Payments can be made online at http://order.kagi.com/?JKT.</p>
+
+</div>
+
+<span style="font-size:12.0pt;font-family:Times;mso-ansi-language:EN-US;
+mso-fareast-language:EN-US"><br clear="ALL" style="page-break-before:right;
+mso-break-type:section-break">
+</span>
+
+<div class="Section4">
+
+<div style="border:solid windowtext 1.5pt;padding:0in 0in 0in 0in;mso-border-shadow:
+yes">
+
+<h1 style="mso-border-between:.75pt solid windowtext;mso-padding-between:0in"><a name="_Toc11859599">Preface</a></h1>
+
+</div>
+
+<p class="MsoNormal"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic"><b>The History of CLIPS<o:p></o:p></b></p>
+
+<p class="MsoNormal"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic">The origins of the C Language Integrated Production System
+(CLIPS<!--[if supportFields]><span style='mso-element:field-begin'></span>xe
+&quot;CLIPS&quot;<![endif]--><!--[if supportFields]><span style='mso-element:
+field-end'></span><![endif]-->) date back to 1984 at NASA’s Johnson Space
+Center. At this time, the Artificial Intelligence Section had developed over a
+dozen prototype expert systems applications using state‑of‑the‑art
+hardware and software. However, despite extensive demonstrations of the
+potential of expert systems, few of these applications were put into regular
+use. This failure to provide expert systems technology within NASA’s
+operational computing constraints could largely be traced to the use of LISP<!--[if supportFields]><span
+style='mso-element:field-begin'></span>xe &quot;LISP&quot;<![endif]--><!--[if supportFields]><span
+style='mso-element:field-end'></span><![endif]--> as the base language for
+nearly all expert system software tools at that time. In particular, three problems
+hindered the use of LISP based expert system tools within NASA<!--[if supportFields]><span
+style='mso-element:field-begin'></span>xe &quot;NASA&quot;<![endif]--><!--[if supportFields]><span
+style='mso-element:field-end'></span><![endif]-->: the low availability of LISP
+on a wide variety of conventional computers, the high cost of state‑of‑the‑art
+LISP tools and hardware, and the poor integra&shy;tion of LISP with other
+languages (making embedded applications difficult).</p>
+
+<p class="basic"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic">The Artificial Intelligence Section<!--[if supportFields]><span
+style='mso-element:field-begin'></span>xe &quot;Artificial Intelligence
+Section&quot;<![endif]--><!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+felt that the use of a conventional language, such as C, would eliminate most
+of these problems, and initially looked to the expert system tool vendors to
+provide an expert system tool written using a conventional language. Although a
+number of tool vendors started converting their tools to run in C<!--[if supportFields]><span
+style='mso-element:field-begin'></span>xe &quot;C&quot;<![endif]--><!--[if supportFields]><span
+style='mso-element:field-end'></span><![endif]-->, the cost of each tool was
+still very high, most were restricted to a small variety of computers, and the
+projected availability times were discouraging. To meet all of its needs in a
+timely and cost effective manner, it became evident that the Artificial
+Intelligence Section would have to develop its own C based expert system tool.</p>
+
+<p class="basic"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic">The prototype version of CLIPS was developed in the spring of
+1985 in a little over two months. Particular attention was given to making the
+tool compatible with expert systems under development at that time by the
+Artificial Intelligence Section. Thus, the syntax of CLIPS was made to very
+closely resemble the syntax of a subset of the ART<!--[if supportFields]><span
+style='mso-element:field-begin'></span>xe &quot;ART&quot;<![endif]--><!--[if supportFields]><span
+style='mso-element:field-end'></span><![endif]--> expert system tool developed
+by Inference Corporation<!--[if supportFields]><span style='mso-element:field-begin'></span>xe
+&quot;Inference Corporation&quot;<![endif]--><!--[if supportFields]><span
+style='mso-element:field-end'></span><![endif]-->. Although originally modelled
+from ART, CLIPS was developed entirely without assistance from Inference or
+access to the ART source code.</p>
+
+<p class="basic"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic">The original intent for CLIPS was to gain useful insight and
+knowledge about the construction of expert system tools and to lay the
+groundwork for the construction of a replacement tool for the commercial tools
+currently being used. Version 1.0 demonstrated the feasibility of the project
+concept. After additional development, it became apparent that CLIPS would be a
+low cost expert system tool ideal for the purposes of training. Another year of
+development and internal use went into CLIPS improving its portability,
+performance, functionality, and supporting documentation. Version 3.0 of CLIPS
+was made available to groups outside of NASA in the summer of 1986.</p>
+
+<p class="basic"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic">Further enhancements transformed CLIPS from a training tool into
+a tool useful for the development and delivery of expert systems as well.
+Versions 4.0 and 4.1 of CLIPS, released respectively in the summer and fall of
+1987, featured greatly improved performance, external language integration, and
+delivery capabilities. Version 4.2 of CLIPS, released in the summer of 1988,
+was a complete rewrite of CLIPS for code modularity. Also included with this
+release were an architecture manual providing a detailed description of the
+CLIPS software architecture and a utility program for aiding in the
+verification and validation of rule‑based programs. Version 4.3 of CLIPS,
+released in the summer of 1989, added still more functionality.</p>
+
+<p class="basic"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic">Originally, the primary representation methodology in CLIPS was
+a forward chaining rule lan&shy;guage based on the Rete algorithm (hence the
+Production System part of the CLIPS acronym). Version 5.0 of CLIPS, released in
+the spring of 1991, introduced two new programming paradigms: procedural
+programming (as found in languages such as C and Ada<!--[if supportFields]><span
+style='mso-element:field-begin'></span>xe &quot;Ada&quot;<![endif]--><!--[if supportFields]><span
+style='mso-element:field-end'></span><![endif]-->) and object‑oriented
+programming (as found in languages such as the Common Lisp Object System<!--[if supportFields]><span
+style='mso-element:field-begin'></span>xe &quot;Common Lisp Object System&quot;<![endif]--><!--[if supportFields]><span
+style='mso-element:field-end'></span><![endif]--> and Smalltalk<!--[if supportFields]><span
+style='mso-element:field-begin'></span>xe &quot;Smalltalk&quot;<![endif]--><!--[if supportFields]><span
+style='mso-element:field-end'></span><![endif]-->). The object‑oriented
+programming language provided within CLIPS is called the CLIPS Object‑Oriented
+Language (COOL<!--[if supportFields]><span style='mso-element:field-begin'></span>xe
+&quot;COOL&quot;<![endif]--><!--[if supportFields]><span style='mso-element:
+field-end'></span><![endif]-->). Version 5.1 of CLIPS, released in the fall of
+1991, was primarily a software maintenance upgrade required to support the
+newly developed and/or enhanced X Window, MS‑DOS, and Macintosh interfaces.
+Version 6.0 of CLIPS, released in 1993, provided support for the development of
+modular programs and tight integration between the object-oriented and
+rule-based programming capabilities of CLIPS. Version 6.1 of CLIPS, released in
+1998,<span style="mso-spacerun: yes">&nbsp; </span>removed support for older
+non-ANSI C Compilers and added support for C++ compilers. Commands to profile
+the time spent in constructs and user-defined functions were also added.</p>
+
+<p class="basic"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic">CLIPS is now maintained independently from NASA as public domain
+software.</p>
+
+<p class="basic"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic">Because of its portability, extensibility, capabilities, and low‑cost,
+CLIPS has received widespread acceptance throughout the government, industry,
+and academia. The development of CLIPS has helped to improve the ability to
+deliver expert system technology throughout the public and private sectors for
+a wide range of applications and diverse computing environments. See appendix A
+of the <i>Basic Programming Guide</i><!--[if supportFields]><i><span
+style='mso-element:field-begin'></span></i><span style='font-style:normal'>xe
+&quot;</span><i>Basic Programming Guide</i><span style='font-style:normal'>&quot;</span><![endif]--><!--[if supportFields]><i><span
+style='mso-element:field-end'></span></i><![endif]--><span style="font-style:
+normal"> for information on obtaining CLIPS and support. </span></p>
+
+<p class="basic"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic"><b>CLIPS Version 6.2</b></p>
+
+<p class="basic"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="basic">Version 6.2 of CLIPS contains two major enhancements. First,
+CLIPS now provides a mechanism which allows an embedded application to create
+multiple environments into which programs can be loaded. Second, an improved
+Windows 2000/XP CLIPS interface is now available and the Macintosh CLIPS
+interface has been enhanced to support MacOS X. For a detailed listing of
+differences between the 6.x releases of CLIPS, refer to appendix B of the <i>Basic
+Programming Guide</i><!--[if supportFields]><i><span style='mso-element:field-begin'></span></i><span
+style='font-style:normal'>xe &quot;</span><i>Basic Programming Guide</i><span
+style='font-style:normal'>&quot;</span><![endif]--><!--[if supportFields]><i><span
+style='mso-element:field-end'></span></i><![endif]--><span style="font-style:
+normal"> and appendix C of the </span><i>Advanced Programming Guide</i><!--[if supportFields]><i><span
+style='mso-element:field-begin'></span></i><span style='font-style:normal'>xe
+&quot;</span><i>Advanced Programming Guide</i><span style='font-style:normal'>&quot;</span><![endif]--><!--[if supportFields]><i><span
+style='mso-element:field-end'></span></i><![endif]--><span style="font-style:
+normal">.</span></p>
+
+<span style="font-size:12.0pt;font-family:Times;mso-ansi-language:EN-US;
+mso-fareast-language:EN-US"><b><br clear="ALL" style="page-break-before:always">
+</b></span>
+
+<p class="basic"><b>CLIPS Documentation</b></p>
+
+<p class="basic"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="MsoNormal" style="margin-left:4.5pt;text-align:justify;tab-stops:.5in 4.5in">Two
+documents are provided with CLIPS.</p>
+
+<p class="MsoNormal" style="margin-left:4.5pt;text-align:justify;tab-stops:.5in 4.5in"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="bullet1">•<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+<i>CLIPS Reference Manual</i><!--[if supportFields]><i><span style='mso-element:
+field-begin'></span></i><span style='font-style:normal'>xe &quot;Reference
+Manual&quot;</span><![endif]--><!--[if supportFields]><i><span
+style='mso-element:field-end'></span></i><![endif]--><span style="font-style:
+normal"> which is split into the following parts: </span></p>
+
+<p class="bullet1"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="bullet2">•<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span><i>Volume
+I - The Basic Programming Guide</i><!--[if supportFields]><i><span
+style='mso-element:field-begin'></span></i><span style='font-style:normal'>xe
+&quot;Basic Programming Guide&quot;</span><![endif]--><!--[if supportFields]><i><span
+style='mso-element:field-end'></span></i><![endif]--><span style="font-style:
+normal">, which provides the definitive description of CLIPS syntax and
+examples of usage. </span></p>
+
+<p class="bullet2"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="bullet2">•<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span><i>Volume
+II - The Advanced Programming Guide</i><!--[if supportFields]><i><span
+style='mso-element:field-begin'></span></i><span style='font-style:normal'>xe
+&quot;Advanced Programming Guide&quot;</span><![endif]--><!--[if supportFields]><i><span
+style='mso-element:field-end'></span></i><![endif]--><span style="font-style:
+normal">, which provides detailed discus&shy;sions of the more sophisticated
+features in CLIPS and is intended for people with extensive programming
+experience who are using CLIPS for advanced ap&shy;plications.</span></p>
+
+<p class="bullet2"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<p class="bullet2">•<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span><i>Volume
+III - The Interfaces Guide</i><!--[if supportFields]><i><span style='mso-element:
+field-begin'></span></i><span style='font-style:normal'>xe &quot;Interfaces
+Guide&quot;</span><![endif]--><!--[if supportFields]><i><span style='mso-element:
+field-end'></span></i><![endif]--><span style="font-style:normal">, which
+provides information on machine‑specific interfaces.<b><o:p></o:p></b></span></p>
+
+<p class="MsoNormal"><b><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></b></p>
+
+<p class="bullet1">•<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+<i>CLIPS User’s Guide</i><!--[if supportFields]><i><span style='mso-element:
+field-begin'></span></i><span style='font-style:normal'>xe &quot;User’s
+Guide&quot;</span><![endif]--><!--[if supportFields]><i><span style='mso-element:
+field-end'></span></i><![endif]--><span style="font-style:normal"> which
+provides an introduction to CLIPS rule‑based and object‑oriented
+programming and is intended for people with little or no expert system
+experience. </span></p>
+
+<p class="bullet1"><span style="mso-spacerun: yes">&nbsp;</span></p>
+
+<p class="bullet1"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+</div>
+
+<span style="font-size:12.0pt;font-family:Times;mso-ansi-language:EN-US;
+mso-fareast-language:EN-US"><br clear="ALL" style="page-break-before:right;
+mso-break-type:section-break">
+</span>
+
+
+</body>
+</html>
